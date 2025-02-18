@@ -1,0 +1,240 @@
+<h1 id="guidingquestions">Guiding Questions</h1>
+
+<p>
+  <b
+    >Has the number of owner-occupied units decreased, or has the corporate
+    ownership rate increased mostly from the purchase of newer units/housing for
+    a growing population?</b
+  >
+</p>
+<p>
+  I’m curious to understand if families/individuals that have/would have
+  historically owned (and occupied) their properties have been able to maintain
+  ownership and/or pass property down through their family or if the market has
+  taken such a dramatic direction that people who would have traditionally been
+  owner-occupiers have given up ownership. From another lens, is the housing
+  market’s inability to keep up with a growing population the main proponent of
+  corporate ownership or is the rise in private equity and other real estate
+  investment channels strong enough that it has pushed people out of ownership?
+  I’m curious if there is an equity angle where only new homebuyers have been
+  pushed out or if previous homeowners have also suffered.
+</p>
+
+<p>
+  <b
+    >How have different neighborhoods been affected by corporate ownership over
+    time?</b
+  >
+</p>
+<p>
+  Although it’s clear (and unsurprising) that housing speculation has had the
+  greatest effect in lower income neighborhoods, I’m curious if other
+  neighborhoods have seen the same trends on a time-delayed basis or if the
+  lower income neighborhoods have simply been affected more. Conversely, as
+  investor ownership of property has grown in less-advantaged communities, has
+  it saturated the market and flowed over into other areas or does there not
+  seem to be an end in sight?
+</p>
+
+<p>
+  <b>Who owns property across neighborhoods of different demographics</b
+  ><b>?</b>
+</p>
+<p>
+  Home ownership in the US has historically been disproportionately attained by
+  white Americans. Given that Boston is a racially diverse city with specific
+  neighborhoods often being more racially homogeneous, I’m curious to see if
+  there is any relationship between property ownership and the demographics of
+  different neighborhoods. This question was spurred from the MAPC reports
+  statistics on how speculation has affected different demographics.
+</p>
+
+<h1 id="explorationandinsights">Exploration and Insights</h1>
+
+<p>
+  To begin answering the first question, I calculated a new field to determine
+  the number of owner occupied units corresponding with each year.
+</p>
+<figure>
+  <img src="../images/5fr_Image_1.png" alt="Number of owner occupied units" />
+</figure>
+<p>
+  This graph shows the total number of owner occupied units (tot unit * Own Occ
+  Rate) in Boston from 2004 to 2024. It shows an 11% decrease over 20 years
+  which indicates that even accounting for population growth and new
+  construction, the amount of owner occupied units is decreasing numerically
+  before taking into account a growing population and housing stock. Next, I’d
+  like to explore how this phenomenon manifested in different neighborhoods.
+</p>
+
+<figure>
+  <img
+    src="../images/yFO_Image_2.png"
+    alt="Number of owner occupied units per neighborhood"
+  />
+</figure>
+<p>
+  This graph displays the number of owner occupied units each year per
+  neighborhood. At first glance, what stands out is the “flatness” of the lines
+  and Dorchester being an outlier in magnitude. The flatness would show a more
+  constant number of owner occupied units. Dorchester, for example, only
+  experienced a 4% decrease over 20 years. That said, this effect is balanced
+  out by other neighborhoods like Alston which experienced a 24% decrease. Also
+  notable is South Boston Waterfront (Seaport) which experienced a 20% increase
+  in owner occupied units, likely due to the massive developments built there
+  during this time. At a glance, a 20% increase in owner occupied units within a
+  region that probably doubled or tripled the total number of units seems
+  surprisingly low and warrants more investigation. Upon further inspection, I
+  also noticed that the number of owner occupied units in Dorchester flatlines
+  between 2013 and 2020 at 23,023 units (.48 ooc rate * 47,965 units), which
+  seems highly unrealistic. Since the owner occupied rate is rounded to 2
+  decimal places over 1000’s of units, it's possible that the rate did not
+  change, but it is improbable the the total number of units would have also
+  remained constant for 7 years. Similar abnormalities exist elsewhere, like
+  West Roxbury from 2015 to 2021. To further explore this, I decided to look
+  into the total number of units in Boston.
+</p>
+
+<figure>
+  <img src="../images/tio_Image_3.png" alt="Total units in Boston" />
+</figure>
+
+<p>
+  The following graph should show the total number of units available in Boston
+  over the period in question. Although the bad news is it is also flatlined at
+  282,190 units, it means we found our problem in the data! Just to be sure, I
+  checked the data at a neighborhood level.
+</p>
+
+<figure>
+  <img
+    src="../images/Qkf_Image_4.png"
+    alt="Total units in Boston by neighborhood"
+  />
+</figure>
+<p>
+  This graph of total number of units in Boston at the neighborhood level
+  confirms the issue. A cross check with
+  <a
+    href="https://www.bostonplans.org/getattachment/c55502f3-3a70-4772-a894-0c51c325b216#:~:text=Boston%20had%20301%2C702%20total%20housing,were%20vacant%20in%20April%202020."
+    >data from the 2 most recent census</a
+  >
+  shows that there were 272,481 units in 2010 and 301,702 units in 2020,
+  indicating that the 282,190 units were likely either the housing from an
+  intermediate year (2014?) or the average number of housing units over the 20
+  years.
+</p>
+
+<figure>
+  <img src="../images/Zuv_Image_6.png" alt="Data source" />
+</figure>
+
+<p>
+  Further direct inspection of the data (pictured left) shows that only the
+  own_occ and corp_own fields are specific by year, with all other census fields
+  held constant. Interestingly, these fields are selectively different from the
+  <a
+    href="https://data.boston.gov/dataset/2020-census-for-boston/resource/5800a0a2-6acd-41a3-9fe0-1bf7b038750d"
+    >data linked as the “source”</a
+  >
+  in the file’s metadata (pictured right). Allston has different numbers while
+  Beacon Hill is the same.
+</p>
+
+<p>
+  Nonetheless, this all shows that this dataset is not usable for any
+  time-related statistics or graphs, except in relation to owner occupancy rate
+  and corporate ownership rate. Fortunately the 2nd question only relies on that
+  data, and the 3rd question can be roughly answered without year-specific data
+  under the assumption that racial demographics of Boston’s neighborhoods have
+  not undergone any dramatic changes over the past 20 years. That said, since
+  the data to properly answer that question is available elsewhere, I’ll focus
+  on answering the 2nd question.
+</p>
+
+<p>
+  To address the second question, I began by assessing the spatial quality of
+  the data provided in tableau, using 2024 and 2004 as reference points.
+</p>
+<figure>
+  <img src="../images/0zg_Image_8.png" alt="Corporate ownership in Boston" />
+</figure>
+<p>
+  The maps show the corporate ownership rate of properties throughout Boston in
+  2004 and 2024. That said, the dividing lines are confusing since many of the
+  regions that are displayed as divided represent the same data. Additionally, 2
+  pieces of land around Back Bay and Northeastern are not included. Nonetheless,
+  it shows some clear trends about corporate ownership. First: corp. ownership
+  is higher in the parts of Boston that are further North. Specifically,
+  Downtown and Seaport exhibit the highest rates of corporate ownership. This
+  makes sense, given that they are both business districts with a lot of office
+  space and high rises. It’s also worth noting that Allston and Downtown were
+  the areas with the highest corporate ownership in 2004 and continued to have
+  some of the highest rates in 2024. I was unable to discern what the
+  unknown/null values were although I did exclude them for the following maps.
+</p>
+
+<figure>
+  <img src="../images/TR2_Image_9.png" alt="Corporate Ownership Delta" />
+</figure>
+<p>
+  This map shows the delta between corporate ownership between 2004 to 2024 by
+  neighborhood. Based on the assertions from the MAPC that more speculation
+  occurs in low-income, non-white neighborhoods, which I understood are usually
+  in the more southern parts of Boston, I was surprised that corporate ownership
+  was higher in more northern areas. That said, it makes sense that Seaport
+  would have the highest Delta given the rapid influx of large-scale, high-end
+  development over the past 20 years. Overall, it seems possible that the
+  highest deltas are in the neighborhoods that have experienced the most
+  development over the past 20 years.
+</p>
+
+<figure>
+  <img src="../images/t0R_Image_11.png" alt="Owner occupied unit rate" />
+</figure>
+<p>
+  These maps show the owner occupied unit rate throughout Boston in 2004 and
+  2024. Somewhat unsurprisingly, they present as a slight inverse to the maps of
+  corporate ownership rate in Boston. This makes sense, given that corporate
+  owned units and owner occupied units are largely mutually exclusive.
+  Interestingly, the two maps are relatively similar and do not seem to show
+  much of a change in occupant ownership. Again, somewhat contradictory to what
+  might have been implied by the MAPC report, it seems that Boston’s most
+  diverse neighborhoods have higher home ownership rates than the less diverse
+  neighborhoods.
+</p>
+<figure>
+  <img src="../images/Lyx_Image_12.png" alt="Owner occupied rate delta" />
+</figure>
+<p>
+  This map shows the change in owner occupied unit rate in Boston between 2004
+  and 2024. This map paints a very different picture than would have been
+  expected from the corporate ownership delta map. The changes are much smaller
+  than would have been expected. Whereas I may have assumed a somewhat direct
+  converse relationship between corporate ownership rate and owner occupant
+  rate, their change does not appear to be correlated. The gap between high
+  corporate ownership increases compared to smaller owner occupancy rate
+  decreases, would likely point to one of two things. First, the two statistics
+  do not refer to the same sum whole. The meta-data does not state that the
+  statistics refer to the same source data. Second, and perhaps more likely, is
+  that there are other ownership groups. Non-corporate, non-occupying owners
+  make up a significant portion of property owners. Their ownership rate would
+  fill the delta between the other 2 figures. This would indicate that these
+  owners are likely the ones selling their properties to corporate owners.
+</p>
+
+<h1 id="summary">Summary</h1>
+
+<p>
+  I first discovered that this dataset is not reliable to answer questions
+  related to annual changes in population or housing supply in Boston, but only
+  accurate for data relating to owner occupation rates and corporate ownership
+  rates of units in Boston. Second, there is a loose inverse relationship
+  between rates of owner occupation and corporate ownership of units in Boston,
+  although the 2 don’t necessarily maintain that relationship linearly over
+  time. Lastly, surprisingly it seems that the wealthier parts of Boston seem to
+  have higher rates of corporate ownership and lower rates of owner occupancy
+  while less wealthy (and more diverse) parts of Boston seem to have lower
+  corporate ownership rates and higher owner occupancy rates. This seems to run
+  contrary to what was reported in the MAPC piece.
+</p>
