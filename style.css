@@ -1,9 +1,14 @@
+:root {
+  --color-accent: oklch(70% 25% 200);
+  --color-accent-light: oklch(99% 20% 200);
+}
+
 body {
   /* Set line height to 1.5 times the font size
        and use the OS’s UI font as the website font
      */
   font: 100%/1.5 system-ui;
-  max-width: 90%;
+  max-width: 80%;
   margin-inline: auto;
   padding: 5ch;
 }
@@ -20,4 +25,76 @@ ul {
 
 li {
   display: contents;
+}
+
+nav {
+  display: flex;
+  margin-bottom: 3ch;
+  border-bottom: 1px solid oklch(80% 3% 200);
+  a {
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    padding: 0.05em;
+  }
+
+  a:hover {
+    border-bottom: 0.4em solid var(--color-accent);
+    background-color: var(--color-accent-light);
+  }
+  .current {
+    font-weight: bold;
+    border-bottom: 0.4em solid oklch(90% 3% 200);
+  }
+}
+
+input {
+  font: inherit;
+}
+
+textarea {
+  font: inherit;
+}
+
+button {
+  font: inherit;
+  width: 100%;
+}
+
+label {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1/-1;
+  gap: 1em;
+  padding: 1em;
+}
+
+form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+}
+article {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+}
+
+h1 {
+  font-size: 4em;
+  line-height: 1.1;
+  text-wrap: balance;
+  text-align: center;
+}
+
+h2 {
+  margin: 0;
+  line-height: 1.1;
+  text-wrap: balance;
+  text-align: center;
 }

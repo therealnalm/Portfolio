@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../style.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact</title>
@@ -10,7 +10,7 @@
     <nav>
       <a href="/Portfolio/">Home</a>
       <a href="/Portfolio/projects/">Projects</a>
-      <a href="/Portfolio/contact/">Contact Info</a>
+      <a class="current" href="/Portfolio/contact/">Contact Info</a>
       <a href="/Portfolio/resume/">CV</a>
       <a href="https://github.com/therealnalm" target="_blank"
         ><img
@@ -25,12 +25,17 @@
 
     <form action="mailto:bsheres@mit.edu" method="POST" enctype="text/plain">
       <ul>
+        <label
+          >Email
+          <input name="email" placeholder="Your email here" type="email" />
+        </label>
+        <label>Subject<input name="subject" placeholder="Subject" /></label>
+        <label
+          >Content<textarea name="body" placeholder="Body"></textarea>
+        </label>
         <label>
-          <input name="email" placeholder="Your email here" type="email"
-        /></label>
-        <label><input name="subject" placeholder="Subject" /></label>
-        <label><textarea name="body" placeholder="Body"></textarea></label>
-        <button>Submit</button>
+          <button>Submit</button>
+        </label>
       </ul>
     </form>
   </body>
