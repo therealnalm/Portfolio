@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<script type="module" src="../global.js" defer></script>
 <html lang="en">
   <head>
     <link rel="stylesheet" href="../style.css" />
@@ -7,10 +8,10 @@
     <title>Contact</title>
   </head>
   <body>
-    <nav>
+    <!-- <nav>
       <a href="../">Home</a>
       <a href="../projects/">Projects</a>
-      <a class="current" href="../contact/">Contact Info</a>
+      <a href="../contact/">Contact Info</a>
       <a href="../resume/">CV</a>
       <a href="https://github.com/therealnalm" target="_blank"
         ><img
@@ -19,13 +20,13 @@
           height="20"
           width="20"
       /></a>
-    </nav>
+    </nav> -->
 
     <h1>Get in touch!</h1>
 
     <form action="mailto:bsheres@mit.edu" method="POST" enctype="text/plain">
       <ul>
-        <label
+        <label class="red"
           >Email
           <input name="email" placeholder="Your email here" type="email" />
         </label>
