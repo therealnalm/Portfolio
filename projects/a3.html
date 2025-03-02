@@ -1,0 +1,191 @@
+<head>
+  <link rel="stylesheet" href="../style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects</title>
+</head>
+<h1 id="bensheresa3">Ben Sheres - A3</h1>
+
+<h1 id="critique">Critique</h1>
+
+<p>
+  The data visualization used in Shaman’s article to represent covid cases
+  effectively uses width to represent new cases over time, although puts a twist
+  on traditional line representations by adding an angular component to
+  represent time. Although I appreciated the attempt to make same-month data
+  comparable by placing them at the same angle, it comes at a great sacrifice
+  for accuracy of the visualization. Since a common width (not area) correlates
+  to case count, a graph representing a constant caseload will have a constantly
+  increasing area, so an equivalent caseload in 2021 appears larger than 2020.
+  This has the (perhaps intended) effect of making the December 2022 outbreak
+  appear proportionally larger or scarier than that of 2021. It nicely
+  complemented the article that stated that Omicron should be taken seriously,
+  although it did so in a slightly misleading way.
+</p>
+
+<p>
+  The visualization’s placement directly below the title of the article is
+  somewhat confusing. There is an implication that the visual will show “when we
+  expect Omicron” to peak although it merely indicates an increase in cases.
+  Although a first glance is sufficient to convey the data being represented,
+  the unorthodox layout feels like it requires further inspection to understand.
+  Red is a good color choice to convey that more cases are negative. The choice
+  to use a width that extends to both sides of the centerline creates a sloppy
+  effect where there are 2 squiggly lines instead of 1 around the centerline.
+  This detracts from the professionality of the visualization and draws more
+  questions as to if there’s another facet to the data being represented.
+  Lastly, the 7-day average point should be made in the “key” where the 150k
+  cases are labeled so readers don’t have to look in multiple places for
+  information that should be in the key.
+</p>
+
+<h1 id="draftvisualizations">Draft Visualizations</h1>
+
+<p><b>Fig 1</b></p>
+<figure>
+  <img src="../images/wXB_Image_1.jpeg" alt="Figure 1" />
+</figure>
+
+<ul>
+  <li>Chose to stack year lines vertically for ease of comparison</li>
+  <li>
+    Used a traditional linear representation without angular component to make
+    years more directly comparable
+  </li>
+  <li>
+    Used the daily average new cases per month to reduce complexity, ultimately
+    this over-muted the data to the point that it is somewhat misleading and
+    under represents the severity of spikes
+  </li>
+  <li>
+    Experimented with black and white only color scheme to simplify, but I think
+    that it could have benefited from added color (probably red or maybe a dark
+    orange to be red-adjacent without directly correlating to death)
+  </li>
+</ul>
+
+<p><b>Fig 2</b></p>
+<figure>
+  <img src="../images/tYA_Image_2.jpeg" alt="Figure 2" />
+</figure>
+
+<ul>
+  <li>
+    Wanted to focus on identifying where the peaks were, so chose to show each
+    month’s max daily new cases
+  </li>
+  <li>
+    Increased focus on being able to compare similar periods of time so put the
+    months from each year directly next to each other
+  </li>
+  <li>
+    Chose 3 similar shades of brown/yellow/orange for years to still give a
+    slightly alert or even negative feel to cases without seeming to preference
+    any one year
+  </li>
+  <li>
+    Was initially disappointed at the disparity between early 2020 data being 0
+    and late 2022 data not being included, so included a starred note in the key
+    and added stars where the late 2022 data would be and bolded lines at 0 for
+    early 2020 data. I think that communicated those outliers really well.
+  </li>
+  <li>
+    Ultimately, I didn’t like the choice to display max daily cases from each
+    month as it (like the averages) does not convey the entire story
+  </li>
+  <li>
+    I did like the choice to place the key centrally to draw in your attention
+    so you read it before actually examining the data.
+  </li>
+  <li>
+    I thought it might be clever to put the axes labels in the bottom left
+    corner since they should be relatively self explanatory but it's too much to
+    the point of looking sloppy. I think smaller font centered next to their
+    axes would have been better
+  </li>
+  <li>
+    I tried again to abbreviate all the months except for January to make it
+    cleaner, but I think each month needs at least 3 letters to be easily
+    understandable
+  </li>
+</ul>
+
+<p><b>Fig. 3</b></p>
+
+<figure>
+  <img src="../images/6ea_Image_3.jpeg" alt="Figure 3" />
+</figure>
+
+<ul>
+  <li>
+    After dancing around and trying to complicate the data display, I decided to
+    go with the simplest, most straightforward representation: a line of daily
+    cases
+  </li>
+  <li>
+    Although the direct comparisons of each month was lost, I think it was the
+    simplest and most direct way to convey the information
+  </li>
+  <li>
+    Unfortunately the actual daily testing is far more volatile (which makes me
+    understand why the original uses a 7-day rolling average)
+  </li>
+  <li>
+    Instead of including each month (or day) I used 6 months intervals and used
+    Jan + Jun (although Dec + May might have been better for differentiability)
+  </li>
+  <li>
+    I used red since there is no need for colors to act as a facet of the
+    information but only to imply cases as bad/deadly
+  </li>
+  <li>
+    I realized that there should be some lighter lines in the background to help
+    users understand how high the peaks are since it gets hard to tell as you
+    get further away
+  </li>
+  <li>
+    Sometimes simplicity is key, and I think this visualization illustrates that
+  </li>
+</ul>
+
+<h1 id="finalvisualization">Final Visualization</h1>
+
+<figure>
+  <img src="../images/XNT_Image_4.png" alt="Final Visualization" />
+</figure>
+
+<h1 id="finalreflection">Final Reflection</h1>
+
+<p>
+  The names of the game with this data visualisation are simplicity and
+  completeness. I didn’t want any novel or confusing spins like in the original
+  visualization nor did I want readers to need to spend more than 2 seconds
+  looking at the visual in order to understand it. There is not an intended
+  message or direction that users are supposed to take the data. It stands on
+  its own for people to read and understand when (and how many people) have been
+  testing positive for Covid. The main visually encoded components of the data
+  is the line showing how many individuals tested positive for covid on a given
+  day. Although the days are not clearly differentiated, the curve/variation of
+  the line does an apt job at demonstrating the numbers. The color of the line
+  is the only piece that communicates a bit of a message. Each year is closer to
+  red and should convey a slight sense of urgency and increased negative effect
+  over time. A key or much other description was left out both for lack of need
+  and to streamline the visual experience. There is not much variation in font
+  size or choice to let users focus on the line showing cases. This is
+  intentionally simple.
+</p>
+
+<p>
+  The critique by design process was useful. Although at first it opened the
+  door for more complex, abstract visualizations using different indicators, I
+  ultimately found that removing complexities was the best way to convey
+  information. Maybe this was because I didn’t have an agenda or motivation for
+  my visualizations, but it felt the most “honest” to leave it unfiltered and
+  unbiased. Even still, the article was trying to demonstrate that the Omicron
+  wave would be worse because it was timed around 2021’s peak and was already
+  off to a stronger start. I think that my visualization still shows this well
+  (barring the missing later data) and allows the user to come to that
+  conclusion themselves instead of feeling pushed into it or confused by a
+  spiral.
+</p>
+<p></p>
